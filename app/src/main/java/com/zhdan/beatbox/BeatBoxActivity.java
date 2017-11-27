@@ -9,10 +9,4 @@ public class BeatBoxActivity extends SingleFragmentActivity {
     protected Fragment createFragment() {
         return BeatBoxFragment.newInstance();
     }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.beat_box_activity);
-    }
 }
