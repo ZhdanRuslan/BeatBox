@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class BeatBoxFragment extends Fragment {
+
     public static BeatBoxFragment newInstance() {
         return new BeatBoxFragment();
     }
