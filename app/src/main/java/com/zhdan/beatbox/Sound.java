@@ -1,9 +1,5 @@
 package com.zhdan.beatbox;
 
-/**
- * Created by user on 28.11.2017.
- */
-
 public class Sound {
     private String mAssetPath;
     private String mName;
