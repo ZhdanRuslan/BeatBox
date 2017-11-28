@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.List;
+
 public class BeatBoxFragment extends Fragment {
 
     private BeatBox mBeatBox;
@@ -50,6 +52,12 @@ public class BeatBoxFragment extends Fragment {
 
     private class SoundAdapter extends RecyclerView.Adapter<SoundHolder>{
 
+        private List<Sound> mSounds;
+
+        public SoundAdapter(List<Sound> sounds) {
+            mSounds = sounds;
+        }
+
         @Override
         public SoundHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(getActivity());
@@ -58,7 +66,8 @@ public class BeatBoxFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(SoundHolder holder, int position) {
-
+            Sound sound = mSounds.get(position);
+            holder.bindSound(sound);
         }
 
         @Override
