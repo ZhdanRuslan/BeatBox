@@ -35,4 +35,7 @@ public class BeatBox {
             mSounds.add(sound);
         }
     }
+    public List<Sound> getSounds() {
+        return mSounds;
+    }
 }
