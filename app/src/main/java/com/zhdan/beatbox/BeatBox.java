@@ -29,5 +29,10 @@ public class BeatBox {
             Log.e(TAG, "Could not list assets", ioe);
             return;
         }
+        for (String filename : soundNames) {
+            String assetPath = SOUNDS_FOLDER + "/" + filename;
+            Sound sound = new Sound(assetPath);
+            mSounds.add(sound);
+        }
     }
 }
