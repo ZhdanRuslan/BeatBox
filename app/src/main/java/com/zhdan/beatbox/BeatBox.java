@@ -1,6 +1,7 @@
 package com.zhdan.beatbox;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -25,6 +26,10 @@ public class BeatBox {
         loadSounds();
     }
 
+    public List<Sound> getSounds() {
+        return mSounds;
+    }
+
     private void loadSounds() {
         String[] soundNames;
         try {
@@ -40,7 +45,10 @@ public class BeatBox {
             mSounds.add(sound);
         }
     }
-    public List<Sound> getSounds() {
-        return mSounds;
+
+    private void load(Sound sound) throws IOException {
+        AssetFileDescriptor afd = mAssets.openFd(sound.getAssetPath());
+        int soundId = mSoundPool.load(afd, 1);
+        sound.setSoundId(soundId);
     }
 }
