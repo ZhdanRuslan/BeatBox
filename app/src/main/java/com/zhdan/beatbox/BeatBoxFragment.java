@@ -49,7 +49,7 @@ public class BeatBoxFragment extends Fragment {
             mSound = sound;
             mButton.setText(mSound.getName());
         }
-        
+
         @Override
         public void onClick(View v) {
             mBeatBox.play(mSound);
